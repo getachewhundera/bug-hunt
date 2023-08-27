@@ -21,6 +21,7 @@ function getQuotes() {
             `;
             i += 1;
         }
+
     }).catch((error) => {
         console.log(error);
         alert('Something went wrong.');
@@ -38,21 +39,25 @@ function submitForm(event) {
     console.log('Inputs ', quote, author);
     let quoteForServer = {
         text: quote,
-        author: author,
+        author: author
     };
-    // ???
+
+
+    //removed comma after the author in quoteForServer object line 41 
+    // ??? addded an s to getQuotes 
     axios.post('/quotes', quoteForServer).then((response) => {
         console.log(response);
-        getQuote();
+        getQuotes();
     }).catch((error) => {
         console.log(error);
         alert('Something went wrong.');
     });
 }
 
-function deleteQuote(index) {
+//added an s to deletequote in getQuotes funtion the button created is named deleteQuotes. line 55
+function deleteQuotes(index) {
     // ???
-    axios.delete('/quotes/${index}').then((response) => {
+    axios.delete(`/quotes/${index}`).then((response) => {
         console.log(response);
         getQuotes();
     }).catch((error) => {

@@ -1,14 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-// ??? List of quotes
-let quoteList = {};
+// // ??? List of quotes
+// let quoteList = {};
+
+let quoteList = [];
 
 // ??? GET request returns information
-router.get('/quotes', (req, res) => {
+router.get('/', (req, res) => {
     console.log('GET Request made for /quotes');
     // Send back the list of quotes!
-    res.send(quoteList);
+    res.send(quoteList);  //changed to quoteForSever
 });
 
 // ??? POST request save user input
@@ -18,14 +20,14 @@ router.post('/', (req, res) => {
     // as a property of req.body.
     console.log(req.body);
     let quoteToAdd = req.body;
-    quotesList.push(quoteToAdd);
+    quoteList.push(quoteToAdd);  //removed the s from quotesList to make it quoteList in router.post line 21 changes to quoteForServer
     res.sendStatus(201);
 });
 
 // PUT request update information
 
 // ??? DELETE request to remove information
-app.delete('/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
     console.log(req.params.id); // Similar to req.body
     const deleteIndex = Number(req.params.id);
     quoteList = quoteList.filter((quote, index) => index !== deleteIndex);
@@ -33,3 +35,5 @@ app.delete('/:id', (req, res) => {
 });
 
 // ???
+
+module.exports = router;

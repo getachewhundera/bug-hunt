@@ -1,29 +1,31 @@
-<html>
+<!DOCTYPE html>
+        <head>
+            <meta charset="UTF-8" >
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- Google Font (optional) -->
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" >
+            <!-- Stylesheet -->
+            <link rel="stylesheet" href="styles/style.css">
+        </head>
 
-<head>
-    <!-- Google Font (optional) -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles/style.css">
-</head>
+        <body>
+            <header>
+                <h1>Node & Express Bug Hunt</h1>
+            </header>
+            <form onSubmit="submitForm(event)">
+                Quote: <input type="text" id="quoteInput" />
+                <br />
+                Author: <input type="text" id="authorInput" />
+                <br />
+                <button type="submit" id="formSubmitButton"> Submit </button>
+            </form>
 
-<body>
-    <header>
-        <h1>Node & Express Bug Hunt</h1>
-    </header>
-    <form onSubmit="submitForm(event)">
-        Quote: <input type="text" id="quoteInput" />
-        <br />
-        Author: <input type="text" id="authorInput" />
-        <br />
-        <input type="submit" />
-    </form>
-    <div id="content">
-    </div>
-    
-    <!-- ??? Our JavaScript file -->
-    <script src="scripts/client.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-</body>
 
+            <div id="content">
+            </div>
+            
+            <!-- ??? Our JavaScript file -->
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+            <script src="scripts/client.js"></script>
+        </body>
 </html>
