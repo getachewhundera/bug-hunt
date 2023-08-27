@@ -42,7 +42,8 @@ function submitForm(event) {
         author: author
     };
 
-
+    document.querySelector('#quoteInput').value= ('');
+    document.querySelector('#authorInput').value = ('');
     //removed comma after the author in quoteForServer object line 41 
     // ??? addded an s to getQuotes 
     axios.post('/quotes', quoteForServer).then((response) => {

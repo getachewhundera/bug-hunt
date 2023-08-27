@@ -45,7 +45,9 @@ Fixed `quote.router.js` line 28: switch `app` to `router`. _This is the solution
 //aded <!DOCTYPE html> boiler plate 
 //href and rel switched for google font line 6 
 //added *.log in .gitignore line 1 
-
+//added: to clear input fields 
+    document.querySelector('#quoteInput').value= ('');
+    document.querySelector('#authorInput').value = ('');
 
 
 ...
